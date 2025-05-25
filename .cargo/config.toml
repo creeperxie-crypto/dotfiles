@@ -5,10 +5,17 @@ rustc-wrapper = "/usr/bin/sccache"
 codegen-backend = true
 
 [profile.dev]
-codegen-backend = "cranelift"
+# Cranelift doesn't work on WebAssembly target
+# codegen-backend = "cranelift"
 
 [source.crates-io]
 replace-with = "ustc"
 
 [source.ustc]
 registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+
+[source.bfsu]
+registry = "sparse+https://mirrors.bfsu.edu.cn/crates.io-index/"
+
+[source.nyist]
+registry = "sparse+https://mirrors.nyist.edu.cn/crates.io-index/"
